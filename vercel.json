@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/tts",
+      "destination": "https://translate.google.com/translate_tts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
