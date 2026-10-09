@@ -74,59 +74,52 @@ class AudioService {
     this.stop();
 
     const encoded = encodeURIComponent(cleanText);
-    const ttsUrls = [
-      `/api/tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encoded}`,
-      `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encoded}`
-    ];
+    const audioUrl = `/api/tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encoded}`;
 
     return new Promise(async (resolve) => {
       this.isPlaying = true;
       let playedSuccess = false;
 
-      for (const url of ttsUrls) {
-        try {
-          const audio = new Audio(url);
+      // 1. Thử phát từ Audio proxy (/api/tts do Vercel Serverless Function hoặc Vite Proxy xử lý)
+      try {
+        let audio;
+        if (this.audioCache.has(cleanText)) {
+          audio = this.audioCache.get(cleanText).cloneNode();
+        } else {
+          audio = new Audio(audioUrl);
           audio.preload = 'auto';
-
-          const playFinished = new Promise((res) => {
-            let done = false;
-            const finish = () => {
-              if (!done) {
-                done = true;
-                this.isPlaying = false;
-                res(true);
-              }
-            };
-
-            // Sự kiện nói xong bình thường
-            audio.onended = finish;
-            audio.onerror = () => {
-              if (!done) {
-                done = true;
-                res(false);
-              }
-            };
-
-            // Timeout dự phòng tối đa 6.5s phòng trường hợp lỗi mạng
-            setTimeout(finish, 6500);
-          });
-
-          this.currentAudio = audio;
-          await audio.play();
-
-          // Đợi audio nói xong hoàn toàn!
-          const success = await playFinished;
-          if (success) {
-            playedSuccess = true;
-            break;
-          }
-        } catch (err) {
-          // Thử url kế tiếp
+          this.audioCache.set(cleanText, audio);
         }
+
+        const playFinished = new Promise((res) => {
+          let done = false;
+          const finish = (ok) => {
+            if (!done) {
+              done = true;
+              this.isPlaying = false;
+              res(ok);
+            }
+          };
+
+          // Sự kiện nói xong bình thường
+          audio.onended = () => finish(true);
+          audio.onerror = () => finish(false);
+
+          // Timeout dự phòng 5s
+          setTimeout(() => finish(false), 5000);
+        });
+
+        this.currentAudio = audio;
+        await audio.play();
+
+        // Đợi audio nói xong hoàn toàn!
+        playedSuccess = await playFinished;
+      } catch (err) {
+        playedSuccess = false;
       }
 
       if (!playedSuccess) {
-        // Fallback sang SpeechSynthesis nếu có giọng tiếng Việt thực sự
+        // Fallback sang SpeechSynthesis của trình duyệt
         this.speakFallbackStrictVi(cleanText, resolve);
       } else {
         resolve();
@@ -135,7 +128,7 @@ class AudioService {
   }
 
   speakFallbackStrictVi(text, onComplete) {
-    if (this.isMuted || !window.speechSynthesis) {
+    if (this.isMuted || typeof window === 'undefined' || !window.speechSynthesis) {
       this.isPlaying = false;
       if (onComplete) onComplete();
       return;
@@ -149,18 +142,15 @@ class AudioService {
       );
     }
 
-    // TUYỆT ĐỐI KHÔNG dùng giọng tiếng Anh
-    if (!this.vietnameseVoice) {
-      this.isPlaying = false;
-      if (onComplete) onComplete();
-      return;
-    }
-
     try {
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.voice = this.vietnameseVoice;
-      utterance.lang = this.vietnameseVoice.lang || 'vi-VN';
+      if (this.vietnameseVoice) {
+        utterance.voice = this.vietnameseVoice;
+        utterance.lang = this.vietnameseVoice.lang || 'vi-VN';
+      } else {
+        utterance.lang = 'vi-VN';
+      }
       utterance.rate = 0.95;
       utterance.pitch = 1.05;
 
