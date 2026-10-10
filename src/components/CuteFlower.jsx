@@ -1,11 +1,11 @@
 import React from 'react';
 
-// Bông hoa 6 cánh mềm mại bo tròn như hoa anh đào / hoa cúc mầm non
-// Chữ cái to đậm, rõ ràng, bé nhìn thấy ngay lập tức!
+// Bông hoa 6 cánh mềm mại bo tròn
+// Nhụy hoa tròn lớn, chữ cái o - ô - ơ to rõ nét, không còn mắt miệng cười
 export default function CuteFlower({
   letter,
   type = 'pink', // 'pink', 'purple', 'mint'
-  size = 126,
+  size = 136,
   onPick,
   draggable = true,
   onDragStart
@@ -61,7 +61,7 @@ export default function CuteFlower({
           left: 0,
           width: '100%',
           height: '100%',
-          filter: 'drop-shadow(0 8px 12px rgba(0,0,0,0.12))'
+          filter: 'drop-shadow(0 8px 14px rgba(0,0,0,0.14))'
         }}
       >
         {/* 6 cánh hoa tròn đều xòe quanh tâm */}
@@ -77,44 +77,32 @@ export default function CuteFlower({
           />
         ))}
 
-        {/* Nhụy hoa tròn lớn ở giữa */}
+        {/* Nhụy hoa tròn lớn màu trắng ở giữa (đã mở rộng để chữ to nổi bật) */}
         <circle
           cx="50"
           cy="50"
-          r="26"
+          r="29"
           fill={cfg.centerBg}
           stroke={cfg.petalStroke}
-          strokeWidth="3"
+          strokeWidth="3.5"
         />
-
-        {/* Đôi mắt cười ngộ nghĩnh dưới chân chữ */}
-        <circle cx="44" cy="62" r="2.2" fill="#2d3436" />
-        <circle cx="56" cy="62" r="2.2" fill="#2d3436" />
-        <path
-          d="M47 65 Q50 67.5 53 65"
-          stroke="#2d3436"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          fill="none"
-        />
-        {/* Má hồng chúm chím */}
-        <circle cx="39" cy="63.5" r="2" fill="#ff7675" opacity="0.6" />
-        <circle cx="61" cy="63.5" r="2" fill="#ff7675" opacity="0.6" />
       </svg>
 
-      {/* CHỮ CÁI O - Ô - Ơ SIÊU TO RÕ NÉT Ở TRUNG TÂM */}
+      {/* CHỮ CÁI o - ô - ơ SIÊU TO RÕ NÉT Ở TRUNG TÂM NHỤY HOA */}
       <span
         style={{
           position: 'relative',
           zIndex: 2,
-          fontSize: `${size * 0.44}px`,
+          fontSize: `${size * 0.58}px`,
           fontWeight: 800,
           color: cfg.textColor,
           lineHeight: 1,
-          fontFamily: 'var(--font-main)',
+          fontFamily: 'var(--font-letter)',
           userSelect: 'none',
-          transform: 'translateY(-5px)',
-          textShadow: '0 1px 2px rgba(255,255,255,0.8)'
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transform: 'translateY(-2px)'
         }}
       >
         {letter}

@@ -1,213 +1,213 @@
-// 30 câu hỏi Mini Game 3: Bé tài ba / Nghiêng đầu tinh mắt (Chọn Trái - Phải)
+// 30 câu hỏi Mini Game 3: Bé tài ba / Nghiêng đầu tinh mắt (Chọn Trái - Phải dạng chữ thường)
 export const game3Questions = [
   {
     id: 1,
-    question: 'Chữ nào là chữ O?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ O tròn như quả trứng' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: '^ chữ O + dấu mũ' },
+    question: 'Chữ nào là chữ o?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o tròn như quả trứng' },
+    right: { letter: 'ô', label: 'Bên phải', hint: '^ chữ o + dấu mũ' },
     correctSide: 'left'
   },
   {
     id: 2,
-    question: 'Chữ nào là chữ Ô?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ tròn xoe' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ có đội nón' },
+    question: 'Chữ nào là chữ ô?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ tròn xoe' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ có đội nón' },
     correctSide: 'right'
   },
   {
     id: 3,
-    question: 'Chữ nào có râu là chữ Ơ?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'chữ có móc râu nhỏ' },
-    right: { letter: 'O', label: 'BÊN PHẢI', hint: 'chữ không có râu' },
+    question: 'Chữ nào có râu là chữ ơ?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ có móc râu nhỏ' },
+    right: { letter: 'o', label: 'Bên phải', hint: 'chữ không có râu' },
     correctSide: 'left'
   },
   {
     id: 4,
-    question: 'Chữ nào có mũ là chữ Ô?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'chữ có râu' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ có mũ nhọn' },
+    question: 'Chữ nào có mũ là chữ ô?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ có râu' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ có mũ nhọn' },
     correctSide: 'right'
   },
   {
     id: 5,
-    question: 'Hình quả trứng tròn xoe là chữ O?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'O tròn như quả trứng gà' },
-    right: { letter: 'Ơ', label: 'BÊN PHẢI', hint: 'chữ có cái râu' },
+    question: 'Hình tròn xoe là chữ o?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'o tròn như quả trứng gà' },
+    right: { letter: 'ơ', label: 'Bên phải', hint: 'chữ có cái râu' },
     correctSide: 'left'
   },
   {
     id: 6,
-    question: 'Từ nào chứa chữ O?',
-    left: { letter: 'CON BÒ', label: 'BÊN TRÁI', hint: 'có 2 chữ O' },
-    right: { letter: 'CÁ RÔ', label: 'BÊN PHẢI', hint: 'chứa chữ Ô' },
+    question: 'Từ nào chứa chữ o?',
+    left: { letter: 'con bò', label: 'Bên trái', hint: 'có 2 chữ o' },
+    right: { letter: 'cá rô', label: 'Bên phải', hint: 'chứa chữ ô' },
     correctSide: 'left'
   },
   {
     id: 7,
-    question: 'Từ nào chứa chữ Ô?',
-    left: { letter: 'LÁ CỜ', label: 'BÊN TRÁI', hint: 'chứa chữ Ơ' },
-    right: { letter: 'CÁI Ô', label: 'BÊN PHẢI', hint: 'chứa chữ Ô' },
+    question: 'Từ nào chứa chữ ô?',
+    left: { letter: 'lá cờ', label: 'Bên trái', hint: 'chứa chữ ơ' },
+    right: { letter: 'cái ô', label: 'Bên phải', hint: 'chứa chữ ô' },
     correctSide: 'right'
   },
   {
     id: 8,
-    question: 'Từ nào chứa chữ Ơ?',
-    left: { letter: 'QUẢ BƠ', label: 'BÊN TRÁI', hint: 'chứa chữ Ơ' },
-    right: { letter: 'QUẢ NHO', label: 'BÊN PHẢI', hint: 'chứa chữ O' },
+    question: 'Từ nào chứa chữ ơ?',
+    left: { letter: 'quả bơ', label: 'Bên trái', hint: 'chứa chữ ơ' },
+    right: { letter: 'quả nho', label: 'Bên phải', hint: 'chứa chữ o' },
     correctSide: 'left'
   },
   {
     id: 9,
-    question: 'Chữ O nằm ở bên nào?',
-    left: { letter: 'Ô', label: 'BÊN TRÁI', hint: 'đây là chữ Ô' },
-    right: { letter: 'O', label: 'BÊN PHẢI', hint: 'đây là chữ O' },
+    question: 'Chữ o nằm ở bên nào?',
+    left: { letter: 'ô', label: 'Bên trái', hint: 'đây là chữ ô' },
+    right: { letter: 'o', label: 'Bên phải', hint: 'đây là chữ o' },
     correctSide: 'right'
   },
   {
     id: 10,
-    question: 'Chữ Ơ nằm ở bên nào?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'đây là chữ Ơ' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'đây là chữ Ô' },
+    question: 'Chữ ơ nằm ở bên nào?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'đây là chữ ơ' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'đây là chữ ô' },
     correctSide: 'left'
   },
   {
     id: 11,
-    question: 'Chữ nào đội nón xinh là chữ Ô?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ tròn không nón' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ đội nón xinh' },
+    question: 'Chữ nào đội nón xinh là chữ ô?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ tròn không nón' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ đội nón xinh' },
     correctSide: 'right'
   },
   {
     id: 12,
-    question: 'Chữ nào có móc râu bên phải là chữ Ơ?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'móc râu xinh xắn' },
-    right: { letter: 'O', label: 'BÊN PHẢI', hint: 'chữ tròn trịa' },
+    question: 'Chữ nào có móc râu bên phải là chữ ơ?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'móc râu xinh xắn' },
+    right: { letter: 'o', label: 'Bên phải', hint: 'chữ tròn trịa' },
     correctSide: 'left'
   },
   {
     id: 13,
-    question: 'Chữ Ô viết hoa là chữ nào?',
-    left: { letter: 'Ô', label: 'BÊN TRÁI', hint: 'chữ Ô in hoa' },
-    right: { letter: 'O', label: 'BÊN PHẢI', hint: 'chữ O in hoa' },
+    question: 'Chữ nào có chiếc mũ xinh xắn?',
+    left: { letter: 'ô', label: 'Bên trái', hint: 'chữ ô có mũ' },
+    right: { letter: 'o', label: 'Bên phải', hint: 'chữ o tròn xoe' },
     correctSide: 'left'
   },
   {
     id: 14,
-    question: 'Chữ Ơ viết thường là chữ nào?',
-    left: { letter: 'o', label: 'BÊN TRÁI', hint: 'chữ o viết thường' },
-    right: { letter: 'ơ', label: 'BÊN PHẢI', hint: 'chữ ơ viết thường' },
+    question: 'Chữ ơ có chiếc râu nhỏ là chữ nào?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o không râu' },
+    right: { letter: 'ơ', label: 'Bên phải', hint: 'chữ ơ có râu' },
     correctSide: 'right'
   },
   {
     id: 15,
-    question: 'Chữ nào trong từ "CON VOI"?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'c-o-n v-o-i' },
-    right: { letter: 'Ơ', label: 'BÊN PHẢI', hint: 'không có trong từ' },
+    question: 'Chữ nào có trong từ "con voi"?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'c-o-n v-o-i' },
+    right: { letter: 'ơ', label: 'Bên phải', hint: 'không có trong từ' },
     correctSide: 'left'
   },
   {
     id: 16,
-    question: 'Chữ nào trong từ "CÔ GIÁO"?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ O' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ Ô trong từ CÔ' },
+    question: 'Chữ nào có trong từ "cô giáo"?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô trong từ cô' },
     correctSide: 'right'
   },
   {
     id: 17,
-    question: 'Chữ nào trong từ "LÁ CỜ"?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'chữ Ơ trong từ CỜ' },
-    right: { letter: 'O', label: 'BÊN PHẢI', hint: 'chữ O' },
+    question: 'Chữ nào có trong từ "lá cờ"?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ ơ trong từ cờ' },
+    right: { letter: 'o', label: 'Bên phải', hint: 'chữ o' },
     correctSide: 'left'
   },
   {
     id: 18,
-    question: 'Chữ nào trong từ "CON HỔ"?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'chữ Ơ' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ Ô trong từ HỔ' },
+    question: 'Chữ nào có trong từ "con hổ"?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ ơ' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô trong từ hổ' },
     correctSide: 'right'
   },
   {
     id: 19,
     question: 'Chữ nào tròn như trăng rằm?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'O tròn như trăng rằm' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ có chóp nón' },
+    left: { letter: 'o', label: 'Bên trái', hint: 'o tròn như trăng rằm' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ có chóp nón' },
     correctSide: 'left'
   },
   {
     id: 20,
-    question: 'Chữ Ơ thêm dấu hỏi là chữ ở bên nào?',
-    left: { letter: 'Ở', label: 'BÊN TRÁI', hint: 'chữ Ở (Ơ + dấu hỏi)' },
-    right: { letter: 'Ổ', label: 'BÊN PHẢI', hint: 'chữ Ổ (Ô + dấu hỏi)' },
+    question: 'Chữ ơ thêm dấu hỏi là chữ ở bên nào?',
+    left: { letter: 'ở', label: 'Bên trái', hint: 'chữ ở (ơ + dấu hỏi)' },
+    right: { letter: 'ổ', label: 'Bên phải', hint: 'chữ ổ (ô + dấu hỏi)' },
     correctSide: 'left'
   },
   {
     id: 21,
-    question: 'Chữ Ô thêm dấu ngã là chữ ở bên nào?',
-    left: { letter: 'Õ', label: 'BÊN TRÁI', hint: 'chữ Õ (O + dấu ngã)' },
-    right: { letter: 'Ỗ', label: 'BÊN PHẢI', hint: 'chữ Ỗ (Ô + dấu ngã)' },
+    question: 'Chữ ô thêm dấu ngã là chữ ở bên nào?',
+    left: { letter: 'õ', label: 'Bên trái', hint: 'chữ õ (o + dấu ngã)' },
+    right: { letter: 'ỗ', label: 'Bên phải', hint: 'chữ ỗ (ô + dấu ngã)' },
     correctSide: 'right'
   },
   {
     id: 22,
-    question: 'Chữ nào trong từ "CHÙM NHO"?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ O trong NHO' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ Ô' },
+    question: 'Chữ nào có trong từ "chùm nho"?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o trong nho' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô' },
     correctSide: 'left'
   },
   {
     id: 23,
-    question: 'Chữ nào trong từ "CÁI NƠ"?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ O' },
-    right: { letter: 'Ơ', label: 'BÊN PHẢI', hint: 'chữ Ơ trong NƠ' },
+    question: 'Chữ nào có trong từ "cái nơ"?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o' },
+    right: { letter: 'ơ', label: 'Bên phải', hint: 'chữ ơ trong nơ' },
     correctSide: 'right'
   },
   {
     id: 24,
-    question: 'Chữ nào trong từ "BÔNG HOA"?',
-    left: { letter: 'Ô', label: 'BÊN TRÁI', hint: 'chữ Ô trong BÔNG' },
-    right: { letter: 'Ơ', label: 'BÊN PHẢI', hint: 'chữ Ơ' },
+    question: 'Chữ nào có trong từ "bông hoa"?',
+    left: { letter: 'ô', label: 'Bên trái', hint: 'chữ ô trong bông' },
+    right: { letter: 'ơ', label: 'Bên phải', hint: 'chữ ơ' },
     correctSide: 'left'
   },
   {
     id: 25,
-    question: 'Chữ nào trong từ "ĐỒNG HỒ"?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ O' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ Ô trong HỒ' },
+    question: 'Chữ nào có trong từ "đồng hồ"?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô trong hồ' },
     correctSide: 'right'
   },
   {
     id: 26,
-    question: 'Chữ O viết thường là chữ nào?',
-    left: { letter: 'o', label: 'BÊN TRÁI', hint: 'chữ o nhỏ nhắn' },
-    right: { letter: 'ô', label: 'BÊN PHẢI', hint: 'chữ ô có nón' },
+    question: 'Chữ o tròn xoe là chữ nào?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o nhỏ nhắn' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô có nón' },
     correctSide: 'left'
   },
   {
     id: 27,
-    question: 'Chữ Ô viết thường là chữ nào?',
-    left: { letter: 'ơ', label: 'BÊN TRÁI', hint: 'chữ ơ có râu' },
-    right: { letter: 'ô', label: 'BÊN PHẢI', hint: 'chữ ô có nón' },
+    question: 'Chữ ô đội nón là chữ nào?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ ơ có râu' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô có nón' },
     correctSide: 'right'
   },
   {
     id: 28,
-    question: 'Chữ nào trong từ "CƠM TRẮNG"?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'chữ Ơ trong CƠM' },
-    right: { letter: 'O', label: 'BÊN PHẢI', hint: 'chữ O' },
+    question: 'Chữ nào có trong từ "cơm trắng"?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ ơ trong cơm' },
+    right: { letter: 'o', label: 'Bên phải', hint: 'chữ o' },
     correctSide: 'left'
   },
   {
     id: 29,
-    question: 'Chữ nào trong từ "BÓNG BAY"?',
-    left: { letter: 'O', label: 'BÊN TRÁI', hint: 'chữ O trong BÓNG' },
-    right: { letter: 'Ơ', label: 'BÊN PHẢI', hint: 'chữ Ơ' },
+    question: 'Chữ nào có trong từ "bóng bay"?',
+    left: { letter: 'o', label: 'Bên trái', hint: 'chữ o trong bóng' },
+    right: { letter: 'ơ', label: 'Bên phải', hint: 'chữ ơ' },
     correctSide: 'left'
   },
   {
     id: 30,
-    question: 'Chữ nào trong từ "CỐC SỮA"?',
-    left: { letter: 'Ơ', label: 'BÊN TRÁI', hint: 'chữ Ơ' },
-    right: { letter: 'Ô', label: 'BÊN PHẢI', hint: 'chữ Ô trong CỐC' },
+    question: 'Chữ nào có trong từ "cốc sữa"?',
+    left: { letter: 'ơ', label: 'Bên trái', hint: 'chữ ơ' },
+    right: { letter: 'ô', label: 'Bên phải', hint: 'chữ ô trong cốc' },
     correctSide: 'right'
   }
 ];

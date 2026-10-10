@@ -12,7 +12,7 @@ export default function HomeLobby({ onSelectGame, totalStars }) {
       icon: '🐄',
       cardClass: 'lobby-card-pink',
       btnClass: 'lobby-btn-pink',
-      instruction: 'Bé nhìn hình con vật, kéo hoặc chạm chữ cái O - Ô - Ơ còn thiếu vào ô trống để hoàn thành tên nhé!',
+      instruction: 'Bé nhìn hình con vật, kéo hoặc chạm chữ cái o - ô - ơ còn thiếu vào ô trống để hoàn thành tên nhé!',
       features: ['30 câu hỏi động vật & đồ vật', 'Kéo thả hoặc chạm trực tiếp', 'Giọng đọc chuẩn Google tiếng Việt']
     },
     {
@@ -23,7 +23,7 @@ export default function HomeLobby({ onSelectGame, totalStars }) {
       icon: '🧺',
       cardClass: 'lobby-card-purple',
       btnClass: 'lobby-btn-purple',
-      instruction: 'Đọc từ gợi ý, chọn và hái đúng bông hoa mặt cười chứa chữ cái O, Ô, Ơ bỏ vào chiếc giỏ mây xinh xắn!',
+      instruction: 'Đọc từ gợi ý, chọn và hái đúng bông hoa mặt cười chứa chữ cái o, ô, ơ bỏ vào chiếc giỏ mây xinh xắn!',
       features: ['30 bông hoa mặt cười ◕‿◕', 'Kéo hoa hoặc chạm vào giỏ', 'Âm thanh Chime & Pop vui nhộn']
     },
     {
@@ -35,7 +35,7 @@ export default function HomeLobby({ onSelectGame, totalStars }) {
       cardClass: 'lobby-card-mint',
       btnClass: 'lobby-btn-mint',
       instruction: 'Luyện đôi mắt tinh anh: Chọn đáp án đúng bên Trái hoặc bên Phải bằng cách chạm thẻ hoặc bấm phím mũi tên!',
-      features: ['30 câu đố chữ O, Ô, Ơ', 'Chạm thẻ hoặc phím mũi tên ← →', 'Luyện phản xạ nhanh cho bé']
+      features: ['30 câu đố chữ o, ô, ơ', 'Chạm thẻ hoặc phím mũi tên ← →', 'Luyện phản xạ nhanh cho bé']
     }
   ];
 
@@ -50,7 +50,7 @@ export default function HomeLobby({ onSelectGame, totalStars }) {
       {/* Tiêu đề sảnh chính rực rỡ */}
       <div className="lobby-header-banner">
         <div className="rainbow-tag">✨ KHU VƯỜN CHỮ CÁI MẦM NON ✨</div>
-        <h1 className="lobby-main-title">BÉ VUI HỌC CHỮ CÁI: O • Ô • Ơ</h1>
+        <h1 className="lobby-main-title">BÉ VUI HỌC CHỮ CÁI: o • ô • ơ</h1>
         <p className="lobby-sub-title">
           Chọn một trò chơi bên dưới để cùng bé khám phá thế giới chữ cái tiếng Việt thật vui nhé!
         </p>

@@ -174,7 +174,7 @@ export default function GameKingdom({ onAddStar, onBackToLobby }) {
           title="Bấm vào để nghe lại tên con vật"
           style={{ width: '150px', height: '150px', padding: '6px' }}
         >
-          <IllustrationImage name={currentQ.name} size={135} />
+          <IllustrationImage image={currentQ.image} name={currentQ.name} size={138} />
         </div>
 
         <div
@@ -185,7 +185,7 @@ export default function GameKingdom({ onAddStar, onBackToLobby }) {
           }}
           style={{ cursor: 'pointer', fontSize: '1.45rem' }}
         >
-          <span>🏷️ {currentQ.name.toUpperCase()}</span>
+          <span>🏷️ {currentQ.name}</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
@@ -229,12 +229,12 @@ export default function GameKingdom({ onAddStar, onBackToLobby }) {
           <span>{currentQ.suffix}</span>
         </div>
 
-        {/* Khay lựa chọn 3D: O - Ô - Ơ CHỮ TO RÕ RÀNG */}
+        {/* Khay lựa chọn 3D: o - ô - ơ CHỮ THƯỜNG TO RÕ RÀNG */}
         <div className="choice-dock" style={{ gap: '26px' }}>
           {currentQ.options.map((opt) => {
             let colorClass = 'pink';
-            if (opt === 'Ô') colorClass = 'purple';
-            if (opt === 'Ơ') colorClass = 'green';
+            if (opt === 'ô' || opt === 'Ô') colorClass = 'purple';
+            if (opt === 'ơ' || opt === 'Ơ') colorClass = 'green';
 
             return (
               <button

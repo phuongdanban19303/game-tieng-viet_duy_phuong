@@ -6,6 +6,7 @@ import { storageService } from '../services/storageService';
 import ProgressBar from '../components/ProgressBar';
 import VictoryModal from '../components/VictoryModal';
 import CuteFlower from '../components/CuteFlower';
+import IllustrationImage from '../components/IllustrationImage';
 
 export default function GameFlowerBasket({ onAddStar, onBackToLobby }) {
   // Khôi phục tiến trình câu hỏi đã lưu từ LocalStorage
@@ -26,7 +27,7 @@ export default function GameFlowerBasket({ onAddStar, onBackToLobby }) {
   const [pickedFlower, setPickedFlower] = useState(null);
 
   const currentQ = game2Questions[currentIndex];
-  const flowerOptions = ['O', 'Ô', 'Ơ'];
+  const flowerOptions = ['o', 'ô', 'ơ'];
 
   // Lưu tiến trình mỗi khi đổi câu
   useEffect(() => {
@@ -164,13 +165,13 @@ export default function GameFlowerBasket({ onAddStar, onBackToLobby }) {
         <div className="rainbow-bg-decor" />
 
         <div className="badge-header" style={{ background: '#fff0f3', borderColor: '#ffccd5', color: '#e84393' }}>
-          <span>🌸 BÉ HÁI HOA - Chinh phục O • Ô • Ơ</span>
+          <span>🌸 BÉ HÁI HOA - Chinh phục o • ô • ơ</span>
         </div>
 
         <div className="game2-layout">
-          {/* Cột bên trái: Thẻ gợi ý từ */}
+          {/* Cột bên trái: Thẻ gợi ý từ và ảnh minh họa thực tế */}
           <div className="hint-card">
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '12px' }}>
               <div className="hint-chip">
                 <span>✨ Từ gợi ý: {currentQ.wordHint}</span>
               </div>
@@ -188,12 +189,30 @@ export default function GameFlowerBasket({ onAddStar, onBackToLobby }) {
                   height: '38px',
                   cursor: 'pointer',
                   fontSize: '1.2rem',
-                  marginBottom: '18px',
                   boxShadow: '0 4px 10px rgba(0,0,0,0.06)'
                 }}
               >
                 🔊
               </button>
+            </div>
+
+            {/* Ảnh minh họa thực tế sắc nét, sống động cho câu hỏi */}
+            <div
+              className="hint-illustration-box"
+              onClick={() => {
+                sfx.playPop();
+                tts.speak(`${currentQ.speechHint}. Hãy hái bông hoa có chữ cái đúng nhé!`);
+              }}
+              title="Bấm vào ảnh để nghe gợi ý"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 16px auto',
+                cursor: 'pointer'
+              }}
+            >
+              <IllustrationImage image={currentQ.image} name={currentQ.wordHint} size={140} />
             </div>
 
             <div className="hint-word-display" style={{ fontSize: '4.2rem' }}>
@@ -231,8 +250,8 @@ export default function GameFlowerBasket({ onAddStar, onBackToLobby }) {
             <div className="flowers-row" style={{ gap: '22px', flexWrap: 'wrap' }}>
               {flowerOptions.map((letter) => {
                 let flowerType = 'pink';
-                if (letter === 'Ô') flowerType = 'purple';
-                if (letter === 'Ơ') flowerType = 'mint';
+                if (letter === 'ô' || letter === 'Ô') flowerType = 'purple';
+                if (letter === 'ơ' || letter === 'Ơ') flowerType = 'mint';
 
                 return (
                   <CuteFlower
