@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { game1Questions } from '../data/game1Questions';
 import { sfx } from '../services/sfxService';
 import { tts } from '../services/audioService';
@@ -25,6 +25,9 @@ export default function GameKingdom({ onAddStar, onBackToLobby }) {
   const [isCompleted, setIsCompleted] = useState(false);
   const [isDragOver, setIsDragOver] = useState(false);
 
+  // Đánh dấu đã đọc hướng dẫn dài 1 lần đầu tiên khi vào trò chơi
+  const hasIntroducedRef = useRef(false);
+
   const currentQ = game1Questions[currentIndex];
 
   // Lưu tiến trình mỗi khi đổi câu
@@ -45,7 +48,13 @@ export default function GameKingdom({ onAddStar, onBackToLobby }) {
     let active = true;
     const timeout = setTimeout(() => {
       if (active) {
-        tts.speak(`Kéo chữ cái còn thiếu vào ô trống: ${currentQ.name}`);
+        if (!hasIntroducedRef.current) {
+          hasIntroducedRef.current = true;
+          tts.speak(`Kéo chữ cái còn thiếu vào ô trống: ${currentQ.name}`);
+        } else {
+          // Các câu sau chỉ đọc từ để hỏi mỗi khi sang câu mới
+          tts.speak(currentQ.name);
+        }
       }
     }, 350);
 
@@ -193,9 +202,9 @@ export default function GameKingdom({ onAddStar, onBackToLobby }) {
           <button
             onClick={() => {
               sfx.playPop();
-              tts.speak(`Kéo chữ cái còn thiếu vào ô trống: ${currentQ.name}`);
+              tts.speak(currentQ.name);
             }}
-            title="Bấm để nghe lại đề bài"
+            title="Bấm để nghe lại từ"
             style={{
               border: 'none',
               background: '#fff0f3',
